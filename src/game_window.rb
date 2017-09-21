@@ -81,15 +81,15 @@ class GameWindow < Gosu::Window
     # if snake dies do this or keep drawing the game in the window
     if @new_game
       @background_image.draw(0, 0, 0)
-      @new_game.draw("You died!! Your score was #{@score}!", 5, 200, 100)
-			@new_game.draw("Press Return to Try Again", 5, 250, 100)
-			@new_game.draw("Or Escape to Close", 5, 300, 100)
+      @new_game.draw("YOU DIED!! YOUR SCORE WAS #{@score}!", 180, 180, 100)
+			@new_game.draw("PRESS RETURN TO PLAY AGAIN", 192, 230, 100)
+			@new_game.draw("OR ESCAPE TO EXIT", 235, 280, 100)
     else
     @background_image.draw(0, 0, 0)
     @snake.update_position
     @star.draw
     @snake.draw
-    @text_object.draw("Score: #{@score}",5,5,0)
+    @text_object.draw("SCORE: #{@score}",5,5,0)
     end
   end
 

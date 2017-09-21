@@ -59,7 +59,7 @@ attr_accessor :direction, :x, :y, :speed, :length, :segments, :ticker
   end
 
   def collected_star?(star)
-    true if Gosu::distance(@head_segment.x, @head_segment.y, star.x, star.y) < 14
+    true if Gosu::distance(@head_segment.x, @head_segment.y, star.x, star.y) < 13
   end
 
   def hit_self?
