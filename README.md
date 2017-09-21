@@ -44,8 +44,8 @@ gem install gosu
 
 Windows
 * Install [Ruby](https://rubyinstaller.org/)
-* Install [RubyGems](https://rubygems.org/pages/download/
-* Install [Gosu])(https://www.libgosu.org/ruby.html): `gem install gosu`
+* Install [RubyGems](https://rubygems.org/pages/download/)
+* Install [Gosu](https://www.libgosu.org/ruby.html): `gem install gosu`
 
 Linux
 * Instructions [here](https://github.com/gosu/gosu/wiki/Getting-Started-on-Linux)
