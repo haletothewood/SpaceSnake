@@ -2,10 +2,10 @@ class Segment
 
 	attr_accessor :x, :y
 
-	def initialize(window)
+	def initialize(snake, window, position)
 		@window = window
-		@x = 200
-		@y = 200
+		@x = position[0]
+		@y = position[1]
 	end
 
 
