@@ -58,4 +58,14 @@ attr_accessor :direction, :x, :y, :speed, :length, :segments, :ticker
  		@segments << @head_segment
   end
 
+  def outside_bounds?
+    if @head_segment.x < 0 || @head_segment.x > 630
+      true
+    elsif @head_segment.y < 0 || @head_segment.y > 470
+      true
+    else
+      false
+    end
+  end
+
 end

@@ -36,13 +36,38 @@ class GameWindow < Gosu::Window
     if button_down? Gosu::KbEscape
       self.close
     end
+
+    if @snake.outside_bounds?
+      @new_game = Gosu::Font.new(self, 'Space Mono', 32)
+    end
+
+    # start new game if return is pressed
+    if @new_game && (button_down? Gosu::KbReturn)
+			@new_game = nil
+      @score = 0
+	    @snake = Snake.new(self)
+	    @apple = Apple.new(self)
+		end
+
+    if button_down? Gosu::KbEscape
+      self.close
+    end
+
   end
 
   def draw
+    # if snake dies do this or keep drawing the game in the window
+    if @new_game
+      @background_image.draw(0, 0, 0)
+      @new_game.draw("You Died!", 5, 200, 100)
+			@new_game.draw("Press Return to Try Again", 5, 250, 100)
+			@new_game.draw("Or Escape to Close", 5, 300, 100)
+    else
     @background_image.draw(0, 0, 0)
     @snake.update_position
     @star.draw
     @snake.draw
+    end
   end
 
 end
