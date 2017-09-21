@@ -9,6 +9,11 @@ class GameWindow < Gosu::Window
   def initialize
     super 640, 480
     self.caption = "Space Snake"
+    @background_image = Gosu::Image.new("media/space_background.png")
   end
 
+  def draw
+    @background_image.draw(0, 0, 0)
+  end
+  
 end
