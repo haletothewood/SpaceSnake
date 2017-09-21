@@ -1,4 +1,12 @@
-# Snakers Academy
+# Space Snake
+
+Built in the couple of days after attending the event "Snakers Academy" as described below. During the event our host was able to get us to the point where we had a game window, as well as an initialized apple and snake. Using the Gosu documentation and with the assistance of Naz Malik's repository [here](https://github.com/nazwhale/ruby-snake) I was able to create a fully functioning variant called Space Snake. 
+
+<p align="center"><img src="https://github.com/haletothewood/SpaceSnake/blob/master/media/game_play.png" width=400></p>
+<p align="center">The stars rotate too!</p>
+
+---
+## Snakers Academy
 
 We're going to make the retro phone game Snake with Ruby (a programming language) and Gosu (a 2D game development library).
 
