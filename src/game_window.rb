@@ -16,6 +16,10 @@ class GameWindow < Gosu::Window
     @star = Star.new(@star_image) # initializes the star in game window)
     @score = 0
     @text_object = Gosu::Font.new(self, 'Space Mono', 32)
+    @game_start = Gosu::Sample.new("media/sounds/game_start.wav")
+    @game_start.play
+    @beep = Gosu::Sample.new("media/sounds/beep.wav")
+    @game_over = Gosu::Sample.new("media/sounds/game_over.wav")
   end
 
   def update
@@ -40,6 +44,7 @@ class GameWindow < Gosu::Window
     end
 
     if @snake.collected_star?(@star)
+      @beep.play
       @star = Star.new(@star_image) # generates a new star
 
       if @star.x != @snake.x..(@snake.x+10)
@@ -59,10 +64,16 @@ class GameWindow < Gosu::Window
     end
 
     if @snake.hit_self?
-      	@new_game = Gosu::Font.new(self, 'Space Mono', 32)
+      if @new_game == nil
+        @game_over.play
+      end
+      @new_game = Gosu::Font.new(self, 'Space Mono', 32)
     end
 
     if @snake.outside_bounds?
+      if @new_game == nil
+        @game_over.play
+      end
       @new_game = Gosu::Font.new(self, 'Space Mono', 32)
     end
 

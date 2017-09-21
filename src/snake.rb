@@ -12,8 +12,7 @@ attr_accessor :direction, :x, :y, :speed, :length, :segments, :ticker
     @segments << @head_segment
     @speed = 2
     @length = 1
-
-
+  
     # Counts down to lengthen the snake each tick when it has eaten an apple
     @ticker = 0
   end
