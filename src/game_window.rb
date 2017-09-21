@@ -51,6 +51,11 @@ class GameWindow < Gosu::Window
       else
           @snake.collected_star?(@star)
       end
+
+      if @score % 100 == 0 # increase speed each time score increases by 100
+      		@snake.speed += 1.5
+      end
+      
     end
 
     if @snake.hit_self?
