@@ -58,6 +58,10 @@ attr_accessor :direction, :x, :y, :speed, :length, :segments, :ticker
  		@segments << @head_segment
   end
 
+  def collected_star?(star)
+    true if Gosu::distance(@head_segment.x, @head_segment.y, star.x, star.y) < 15
+  end
+
   def outside_bounds?
     if @head_segment.x < 0 || @head_segment.x > 630
       true
