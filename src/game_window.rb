@@ -53,6 +53,9 @@ class GameWindow < Gosu::Window
       end
     end
 
+    if @snake.hit_self?
+      	@new_game = Gosu::Font.new(self, 'Space Mono', 32)
+    end
 
     if @snake.outside_bounds?
       @new_game = Gosu::Font.new(self, 'Space Mono', 32)

@@ -59,7 +59,22 @@ attr_accessor :direction, :x, :y, :speed, :length, :segments, :ticker
   end
 
   def collected_star?(star)
-    true if Gosu::distance(@head_segment.x, @head_segment.y, star.x, star.y) < 15
+    true if Gosu::distance(@head_segment.x, @head_segment.y, star.x, star.y) < 14
+  end
+
+  def hit_self?
+    segments = Array.new(@segments)
+
+    if segments.length > 21
+      # remove the dead segment from consideration
+      segments.pop((10* @speed))
+      segments.each do |segment|
+        if Gosu::distance(@head_segment.x, @head_segment.y, segment.x, segment.y) < 11 # collision!
+          return true
+        end
+      end
+      false
+    end
   end
 
   def outside_bounds?
